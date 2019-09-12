@@ -85,3 +85,26 @@ function draw() {
     
 }
 //console.log(ground.update())/// tried logging the ground but it didn't work 
+//class Ground {
+   // constructor(){this.x = 10;
+    //this.y = 300;
+    //this.height = 300;
+    //this.width = 420;
+    //this.color = (0,0,100)}
+    //create(){
+        //fill(this.color);
+        //rect(this.x,this.y,this.width,this.height);
+        //if(this.rainManager.createDrop() = 20){
+         //   this.rainManager.createDrop() = 0;
+       // }
+
+    //}
+//} could not figure out and can't figure out how to create a rectangle using a class if i could i would be able to finnish the asignment.
+           
+        
+        //constructor
+        //set the starting color
+        //start the drop hit count
+        
+           
+            //supposed to create rectangle
