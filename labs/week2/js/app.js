@@ -1,20 +1,7 @@
 //N320
 //Christian Cochran
 //Week 2
-class Ground {
-   constructor(){this.x = 10;
-    this.y = 100;
-    this.height = 250;
-    this.width = 420;
-    this.color = (0,0,100)}
-    create(){
-        fill(this.color);
-        rect(this.x,this.y,this.width,this.height);
-    //     if(this.rainManager.createDrop() = 20){
-    //        this.rainManager.createDrop() = 0;
-    //    }
 
-    }}
 
 
 class Drop {
@@ -50,12 +37,28 @@ class RainManager {
     update() {
         for(var i = 0; i < this.drops.length; i++) {
             this.drops[i].update();
-           
+            if(this.drops[i] >= 10){
+                this.drops.reduce(5);// supposed to subtract 5 from the array
+            }
         }
         
     }
 }
-
+class Ground {
+    constructor(){this.x = 0;
+     this.y = 100;
+     this.height = 250;
+     this.width = 420;
+     this.color = (0,0,0)}
+     create(){
+         fill(this.color);
+         rect(this.x,this.y,this.width,this.height);
+         if(rainManager.y ==55){
+            this.color = this.color + 5;
+        }//supposed to change the color of the box how ever it dosen't work
+        
+ 
+     }}
 
 
 
