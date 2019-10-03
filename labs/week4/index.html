@@ -1,15 +1,58 @@
 <html>
-    <body>
-        <script src = "js/app.js"></script>
-        <style src = "js/app.js"></style>
-        
-    
-<div id="theplace"></div>
+    <style>
+      .boxed { width: 400px; height: 150px; margin: 10px; float: left; background-color: red; animation: boxedBuildIn .7s; animation-fill-mode: both; }
 
-<template id="cardTemplate">
-  <div class="card">
-      {suit} - {value}
-  </div>
-</template>
-</body>
+.bigboxed { width: 2000px; height: 100px; margin: 1px; float: left; background-color: blue;animation: boxedBuildIn .6s; animation-fill-mode: both;}
+.txt { font-size: 75px; font-family:timesnewroman; color: blue;animation: boxedBuildIn .5s; animation-fill-mode: both;}
+@keyframes boxedBuildIn {
+  from {
+    opacity: 0;
+    transform: scale(.2) rotateZ(130deg) rotateX(130deg);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.cardOver {
+  animation: boxedOverAnim .7s;
+  animation-fill-mode: both;
+}
+
+.cardOut {
+  animation: boxedOutAnim .7s;
+  animation-fill-mode: both;
+}
+@keyframes boxedOverAnim {
+  to {
+    opacity: 1;
+    background-color: #FF0;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes boxedOutAnim {
+  from {
+    opacity: 1;
+    transform: scale(1.2);
+    background-color: #FFFF00;
+  }
+  
+  to {
+    opacity: 1;
+    transform: scale(1);
+    background-color: #FFF;
+  }
+}
+  
+    </style>
+  
+      
+  
+    
+   <div> TEXT </div>
+    <div  class='bigboxed'> </div>
+    <div id="gallery"> </div>
+    
+    
+    
 </html>
