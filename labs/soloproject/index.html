@@ -1,0 +1,131 @@
+<html>
+
+<head>
+
+  <title> I guess Mine Sweeper</title>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+
+  <style>
+
+  .cell 
+
+  {
+
+    width: 50px;
+
+    display: inline-block;
+
+    line-height: 50px;
+
+    height: 50px;
+
+    text-align: center;
+
+    margin: 3px;
+
+    background-color: black;
+
+    border: 2px solid red;
+
+    vertical-align: middle;
+    animation:boxedOutAnim 7s ;
+
+  }
+  .txt{
+    color: darkred;
+    animation: boxedIN 7s;
+  }
+  
+
+  .clear 
+
+  {
+
+    background-color: purple;
+
+  }
+  @keyframes boxedOutAnim {
+  from {
+    opacity: 1;
+    transform: scale(1.2);
+    background-color: black;
+  }
+  
+  to {
+    opacity: 1;
+    transform: scale(1);
+    background-color:green;
+  }
+}
+@keyframes boxedIN {
+  from {
+    opacity: 1;
+    transform: scale(1.2);
+    background-color:black;
+  }
+  
+  to {
+    opacity: 1;
+    transform: scale(1);
+    background-color:red;
+  }
+}
+
+  </style>
+
+  
+
+</head>
+
+<body>
+  <div class="txt">Mine Sweeper</div>
+
+  <div id="app">
+
+    <h2>{{result}}</h2>
+
+    <div v-for="(row, i) in cells" :key="i">
+
+      <div v-for="(cell, j) in row" :key="j" 
+
+                                      :class="['cell', cell.isClear ? 'clear' : '']" 
+
+                                      @click="filp(i, j, cell)"
+
+                                      @contextmenu="mark(cell, $event)">
+
+        {{ showCell(cell) }}
+
+      </div>
+
+    </div>
+
+    <div style="margin-top: 40px;">
+
+      <div>
+
+        <label>rowCount:</label>
+
+        <input type="number" v-model="rowCount">
+
+      </div>
+
+      <div>
+
+        <label>bombCount:</label>
+
+        <input type="number" v-model="bombCount">
+
+      </div>
+
+      <button type="button" @click="restart">Restart</button>
+
+    </div>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
