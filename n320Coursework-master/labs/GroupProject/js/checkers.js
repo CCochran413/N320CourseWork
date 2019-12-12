@@ -62,13 +62,16 @@ var checkers = new Vue({
     },
     selectPiece: function(row, col, item) {
       //   console.log(row, col, item);
+      //newPiece.addEventListener("mouseover", onPieceOver);
 
       // Check the selected piece to see if it belongs to the player who's turn it is. If it is: continue. Else do nothing.
       if (item == this.playerTurn) {
         // Save selected piece data to the higher scope.
+        
         this.pieceSelected = true;
         this.selectedRow = row;
         this.selectedCol = col;
+        
       } else {
         this.pieceSelected = false;
       }
@@ -227,3 +230,6 @@ var checkers = new Vue({
     }
   }
 });
+//addAnimation(){
+
+//};
